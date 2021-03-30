@@ -45,9 +45,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "RickAndMorty.Net.Api": {
+            "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
-              "version": "[0.2.0, )"
+              "version": "[5.0.1, )"
             }
           },
           "imports": [

@@ -1,6 +1,5 @@
-﻿using Common.Utils;
-using RickAndMorty.Net.Api.Service;
-using RickAndMortyChallenge.Client;
+﻿using Common.Clients;
+using Common.Utils;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,22 +12,16 @@ namespace CharCounter.Tasks
 
         private CharacterClient characterClient;
 
-        public CharacterTask()
+        public CharacterTask(CharacterClient _characterClient)
         {
-            characterClient = new CharacterClient();
+            characterClient = _characterClient;
         }
 
-        public async Task Execute(IRickAndMortyService service, string charactersUrl)
+        public async Task Execute(string charactersUrl)
         {
-            var timer = new TimerDecorator();
-
-            timer.Iniciar();
             var characters = await characterClient.GetCharactersAsync(charactersUrl);
-            var elapsed = timer.Detener();
 
-            Console.WriteLine($"tiempo de las apis {elapsed}");
-
-            Console.WriteLine($"La letra c aparece {characters.Sum(_ => _.GetLetterCount(letter))} veces en los nombres de todos personajes");
+            Console.WriteLine($"La letra {letter} aparece {characters.Sum(_ => _.GetLetterCount(letter))} veces en los nombres de todos los personajes");
         }
     }
 }

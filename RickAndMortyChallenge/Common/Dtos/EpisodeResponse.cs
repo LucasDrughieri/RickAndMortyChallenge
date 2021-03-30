@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace Common.ResponseModels
+namespace Common.Dtos
 {
-    public class LocationResponse
+    public class EpisodeResponse
     {
         public InfoResponse Info { get; set; }
 
-        public IList<LocationResultResponse> Results { get; set; }
+        public IList<EpisodeResultResponse> Results { get; set; }
     }
 
-    public class LocationResultResponse
+    public class EpisodeResultResponse
     {
         public int Id { get; set; }
 

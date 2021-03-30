@@ -3,19 +3,25 @@ using System.Timers;
 
 namespace Common.Utils
 {
-    public class TimerDecorator : Timer
+    public class TimerDecorator
     {
         private DateTime start;
+        private Timer timer;
 
-        public void Iniciar()
+        public TimerDecorator()
         {
-            start = DateTime.Now;
-            this.Start();
+            timer = new Timer();
         }
 
-        public TimeSpan Detener()
+        public void Start()
         {
-            base.Stop();
+            start = DateTime.Now;
+            timer.Start();
+        }
+
+        public TimeSpan Stop()
+        {
+            timer.Stop();
             TimeSpan elapsed = DateTime.Now - start;
             return elapsed;
         }

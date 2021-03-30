@@ -1,7 +1,7 @@
 ﻿using CharCounter.Tasks;
+using Common.Clients;
 using Common.Utils;
-using RickAndMorty.Net.Api.Factory;
-using RickAndMortyChallenge.Client;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Threading.Tasks;
 
@@ -11,17 +11,34 @@ namespace CharCounter
     {
         static async Task Main(string[] args)
         {
-            var availableApisClient = new AvailableApisClient();
+            var serviceProvider = Configuration.SetupDI();
 
-            var service = RickAndMortyApiFactory.Create();
-
-            var timer = new TimerDecorator();
+            var availableApisClient = serviceProvider.GetService<AvailableApisClient>();
 
             var availableApis = await availableApisClient.GetAvailableApisAsync();
 
-            timer.Iniciar();
-            await new CharacterTask().Execute(service, availableApis.Characters);
-            var elapsed = timer.Detener();
+            var timer = new TimerDecorator();
+
+            timer.Start();
+
+            var task1 = Task.Run(async () => {
+                var characterTask = serviceProvider.GetService<CharacterTask>();
+                await characterTask.Execute(availableApis.Characters);
+            });
+
+            var task2 = Task.Run(async () => {
+                var locationTask = serviceProvider.GetService<LocationTask>();
+                await locationTask.Execute(availableApis.Locations);
+            });
+
+            var task3 = Task.Run(async () => {
+                var episodeTask = serviceProvider.GetService<EpisodesTask>();
+                await episodeTask.Execute(availableApis.Episodes);
+            });
+
+            Task.WaitAll(new[] { task1, task2, task3 });
+
+            var elapsed = timer.Stop();
 
             Console.WriteLine($"tiempo total {elapsed}");
 
