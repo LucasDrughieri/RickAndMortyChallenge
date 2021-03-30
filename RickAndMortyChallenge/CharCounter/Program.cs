@@ -1,4 +1,4 @@
-﻿using CharCounter.Tasks;
+﻿using CharCounter.Resolvers;
 using Common.Clients;
 using Common.Utils;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,32 +15,34 @@ namespace CharCounter
 
             var availableApisClient = serviceProvider.GetService<AvailableApisClient>();
 
-            var availableApis = await availableApisClient.GetAvailableApisAsync();
-
             var timer = new TimerDecorator();
 
             timer.Start();
 
+            var availableApis = await availableApisClient.GetAvailableApisAsync();
+
             var task1 = Task.Run(async () => {
-                var characterTask = serviceProvider.GetService<CharacterTask>();
+                var characterTask = serviceProvider.GetService<CharacterResolver>();
                 await characterTask.Execute(availableApis.Characters);
             });
 
             var task2 = Task.Run(async () => {
-                var locationTask = serviceProvider.GetService<LocationTask>();
+                var locationTask = serviceProvider.GetService<LocationResolver>();
                 await locationTask.Execute(availableApis.Locations);
             });
 
             var task3 = Task.Run(async () => {
-                var episodeTask = serviceProvider.GetService<EpisodesTask>();
+                var episodeTask = serviceProvider.GetService<EpisodesResolver>();
                 await episodeTask.Execute(availableApis.Episodes);
             });
 
             Task.WaitAll(new[] { task1, task2, task3 });
 
+            Console.WriteLine(asd);
+
             var elapsed = timer.Stop();
 
-            Console.WriteLine($"tiempo total {elapsed}");
+            Console.WriteLine($"El tiempo total del programa fue {elapsed}");
 
             Console.ReadKey();
         }

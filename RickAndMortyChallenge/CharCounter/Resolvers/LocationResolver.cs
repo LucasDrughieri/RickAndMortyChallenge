@@ -3,15 +3,15 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CharCounter.Tasks
+namespace CharCounter.Resolvers
 {
-    public class LocationTask
+    public class LocationResolver
     {
         const string letter = "I";
 
         private LocationClient locationClient;
 
-        public LocationTask(LocationClient _locationClient)
+        public LocationResolver(LocationClient _locationClient)
         {
             locationClient = _locationClient;
         }

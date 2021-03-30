@@ -3,15 +3,15 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CharCounter.Tasks
+namespace CharCounter.Resolvers
 {
-    public class EpisodesTask
+    public class EpisodesResolver
     {
         const string letter = "e";
 
         private EpisodeClient episodeClient;
 
-        public EpisodesTask(EpisodeClient _episodeClient)
+        public EpisodesResolver(EpisodeClient _episodeClient)
         {
             episodeClient = _episodeClient;
         }

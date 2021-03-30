@@ -1,18 +1,17 @@
 ﻿using Common.Clients;
-using Common.Utils;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CharCounter.Tasks
+namespace CharCounter.Resolvers
 {
-    public class CharacterTask
+    public class CharacterResolver
     {
         const string letter = "c";
 
         private CharacterClient characterClient;
 
-        public CharacterTask(CharacterClient _characterClient)
+        public CharacterResolver(CharacterClient _characterClient)
         {
             characterClient = _characterClient;
         }

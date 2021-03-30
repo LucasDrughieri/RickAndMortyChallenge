@@ -15,6 +15,6 @@ D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\CharCounte
 D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\CharCounter\bin\Debug\netcoreapp3.1\Common.pdb
 D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\CharCounter\obj\Debug\netcoreapp3.1\CharCounter.csproj.CopyComplete
 D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\CharCounter\bin\Debug\netcoreapp3.1\System.Text.Json.dll
-D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\CharCounter\obj\Debug\netcoreapp3.1\CharCounter.csproj.CoreCompileInputs.cache
 D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\CharCounter\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
 D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\CharCounter\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\CharCounter\obj\Debug\netcoreapp3.1\CharCounter.csproj.CoreCompileInputs.cache
