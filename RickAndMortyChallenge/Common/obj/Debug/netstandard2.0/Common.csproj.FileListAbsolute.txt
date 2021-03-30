@@ -1,0 +1,9 @@
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\Common\bin\Debug\netstandard2.0\Common.deps.json
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\Common\bin\Debug\netstandard2.0\Common.dll
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\Common\obj\Debug\netstandard2.0\Common.csprojAssemblyReference.cache
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\Common\obj\Debug\netstandard2.0\Common.AssemblyInfoInputs.cache
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\Common\obj\Debug\netstandard2.0\Common.AssemblyInfo.cs
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\Common\bin\Debug\netstandard2.0\Common.pdb
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\Common\obj\Debug\netstandard2.0\Common.dll
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\Common\obj\Debug\netstandard2.0\Common.pdb
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\Common\obj\Debug\netstandard2.0\Common.csproj.CoreCompileInputs.cache

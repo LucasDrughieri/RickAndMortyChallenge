@@ -1,0 +1,13 @@
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\EpisodeLocations\bin\Debug\netcoreapp3.1\EpisodeLocations.exe
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\EpisodeLocations\bin\Debug\netcoreapp3.1\EpisodeLocations.deps.json
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\EpisodeLocations\bin\Debug\netcoreapp3.1\EpisodeLocations.runtimeconfig.json
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\EpisodeLocations\bin\Debug\netcoreapp3.1\EpisodeLocations.runtimeconfig.dev.json
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\EpisodeLocations\bin\Debug\netcoreapp3.1\EpisodeLocations.dll
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\EpisodeLocations\bin\Debug\netcoreapp3.1\EpisodeLocations.pdb
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\EpisodeLocations\obj\Debug\netcoreapp3.1\EpisodeLocations.csprojAssemblyReference.cache
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\EpisodeLocations\obj\Debug\netcoreapp3.1\EpisodeLocations.AssemblyInfoInputs.cache
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\EpisodeLocations\obj\Debug\netcoreapp3.1\EpisodeLocations.AssemblyInfo.cs
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\EpisodeLocations\obj\Debug\netcoreapp3.1\EpisodeLocations.csproj.CoreCompileInputs.cache
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\EpisodeLocations\obj\Debug\netcoreapp3.1\EpisodeLocations.dll
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\EpisodeLocations\obj\Debug\netcoreapp3.1\EpisodeLocations.pdb
+D:\Backup\Lucas\Proyectos\RickAndMortyChallenge\RickAndMortyChallenge\EpisodeLocations\obj\Debug\netcoreapp3.1\EpisodeLocations.genruntimeconfig.cache
