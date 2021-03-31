@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Web.Utils;
 
 namespace Web.Clients
 {
@@ -21,7 +22,12 @@ namespace Web.Clients
             _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        protected async Task<T> CallApiAsync<T>(string url) where T : class
+        /// <summary>
+        /// Base method to do a HTTP GET
+        /// </summary>
+        /// <typeparam name="T">class to map the response</typeparam>
+        /// <param name="url">url to call</param>
+        protected async Task<T> CallGetApiAsync<T>(string url) where T : class
         {
             using (HttpRequestMessage httpRequestMessage = new HttpRequestMessage())
             {
@@ -30,6 +36,8 @@ namespace Web.Clients
 
                 using (HttpResponseMessage response = await _client.SendAsync(httpRequestMessage))
                 {
+                    if (!response.IsSuccessStatusCode) throw new AppException($"Error calling GET {url}");
+
                     string responseBody = await response.Content.ReadAsStringAsync();
 
                     var data = JsonSerializer.Deserialize<T>(responseBody, jsonSerializerOptions);

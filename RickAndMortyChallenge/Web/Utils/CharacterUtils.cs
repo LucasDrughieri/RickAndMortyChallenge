@@ -4,11 +4,9 @@ namespace Web.Utils
 {
     public static class CharacterUtils
     {
-        private static readonly string CharacterUrl = "https://rickandmortyapi.com/api/character/";
-
-        public static int GetIdByUrl(string url)
+        public static int GetIdByUrl(string url, string charactersBaseUrl)
         {
-            var idAsString = url.Replace(CharacterUrl, "");
+            var idAsString = url.Replace($"{charactersBaseUrl}/", "");
             return Convert.ToInt32(idAsString);
         }
     }

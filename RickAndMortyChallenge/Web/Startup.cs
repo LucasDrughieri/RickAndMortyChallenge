@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Web.Clients;
+using Web.Middleware;
 using Web.Resolvers;
 using Web.Services;
 
@@ -22,6 +23,7 @@ namespace Web
         {
             services.AddControllers();
 
+            //Configuración de DI
             services.AddScoped<CharacterResolver>();
             services.AddScoped<LocationResolver>();
             services.AddScoped<EpisodesResolver>();
@@ -45,6 +47,8 @@ namespace Web
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseMiddleware<ErrorHandlerMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {

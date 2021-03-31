@@ -4,19 +4,19 @@ namespace Web.Dtos
 {
     public class LocationItemResponse
     {
-        private readonly string LocationUrl = "https://rickandmortyapi.com/api/location/";
-
         public string Name { get; set; }
 
         public string Url { get; set; }
 
-        public int Id
+        public int? GetId(string locationBaseUrl)
         {
-            get
+            if(!string.IsNullOrWhiteSpace(Url) && Url.Contains(locationBaseUrl))
             {
-                var idAsString = Url.Replace(LocationUrl, "");
+                var idAsString = Url.Replace($"{locationBaseUrl}/", "");
                 return Convert.ToInt32(idAsString);
             }
+
+            return null;
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Web.Dtos;
 using Web.Services;
 using Web.Utils;
@@ -18,8 +17,11 @@ namespace Web.Controllers
             _episodeLocationsService = episodeLocationsService;
         }
 
+        /// <summary>
+        /// Endpoint to resolve excercise 2 (Episode Location)
+        /// </summary>
         [HttpGet]
-        public async Task<EpisodeLocationsResponse> GetAsync()
+        public async Task<EpisodeLocationsResponse> ResolveEpisodeLocationExcercise()
         {
             var timer = new TimerDecorator();
 

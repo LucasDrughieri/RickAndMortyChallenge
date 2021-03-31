@@ -1,10 +1,12 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Web.Clients;
 
 namespace Web.Resolvers
 {
+    /// <summary>
+    /// Class to resolve how many the letter e (case insensitive) appears in all episodes´s name
+    /// </summary>
     public class EpisodesResolver
     {
         const string letter = "e";
@@ -16,11 +18,14 @@ namespace Web.Resolvers
             episodeClient = _episodeClient;
         }
 
-        public async Task<string> Execute(string charactersUrl)
+        public async Task<string> Execute(string episodesUrl)
         {
-            var characters = await episodeClient.GetEpisodesAsync(charactersUrl);
+            //Calling episodeClient to get all episodes by http get
+            var episodes = await episodeClient.GetEpisodesAsync(episodesUrl);
 
-            return $"La letra {letter} aparece {characters.Sum(_ => _.GetLetterCount(letter))} veces en los nombres de todos los episodios";
+            if (!episodes.Any()) return "The episodes API returns an empty list";
+
+            return $"La letra {letter} aparece {episodes.Sum(_ => _.GetLetterCount(letter))} veces en los nombres de todos los episodios";
         }
     }
 }

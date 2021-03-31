@@ -20,8 +20,11 @@ namespace Web.Controllers
             _charCounterService = charCounterService;
         }
 
+        /// <summary>
+        /// Endpoint to resolve excercie 1 (Char Counter)
+        /// </summary>
         [HttpGet]
-        public async Task<CharCounterResponse> GetAsync()
+        public async Task<CharCounterResponse> ResolveCharCounterExcercise()
         {
             var timer = new TimerDecorator();
 

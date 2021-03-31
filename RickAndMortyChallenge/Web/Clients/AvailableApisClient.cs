@@ -4,6 +4,9 @@ using Web.Dtos;
 
 namespace Web.Clients
 {
+    /// <summary>
+    /// Client to getting all available APIs resources
+    /// </summary>
     public class AvailableApisClient : BaseClient
     {
         const string AvailableApisUrl = "https://rickandmortyapi.com/api";
@@ -14,7 +17,7 @@ namespace Web.Clients
 
         public async Task<AvailabeApisResponse> GetAvailableApisAsync()
         {
-            return await CallApiAsync<AvailabeApisResponse>(AvailableApisUrl);
+            return await CallGetApiAsync<AvailabeApisResponse>(AvailableApisUrl);
         }
     }
 }
