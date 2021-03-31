@@ -1,19 +1,20 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using Web.Clients;
+using Web.Interfaces;
 
 namespace Web.Resolvers
 {
     /// <summary>
     /// Class to resolve how many the letter I (case insensitive) appears in all location´s name
     /// </summary>
-    public class LocationResolver
+    public class LocationResolver : ILocationResolver
     {
         const string letter = "I";
 
-        private LocationClient locationClient;
+        private ILocationClient locationClient;
 
-        public LocationResolver(LocationClient _locationClient)
+        public LocationResolver(ILocationClient _locationClient)
         {
             locationClient = _locationClient;
         }

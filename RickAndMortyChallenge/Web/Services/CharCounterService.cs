@@ -1,18 +1,19 @@
 ﻿using System.Threading.Tasks;
 using Web.Clients;
 using Web.Dtos;
+using Web.Interfaces;
 using Web.Resolvers;
 
 namespace Web.Services
 {
-    public class CharCounterService
+    public class CharCounterService : ICharCounterService
     {
-        private readonly CharacterResolver _characterResolver; 
-        private readonly LocationResolver _locationResolver; 
-        private readonly EpisodesResolver _episodesResolver;
-        private readonly AvailableApisClient _availableApisClient;
+        private readonly ICharacterResolver _characterResolver; 
+        private readonly ILocationResolver _locationResolver; 
+        private readonly IEpisodesResolver _episodesResolver;
+        private readonly IAvailableApisClient _availableApisClient;
 
-        public CharCounterService(CharacterResolver characterTask, LocationResolver locationResolver, EpisodesResolver episodesResolver, AvailableApisClient availableApisClient)
+        public CharCounterService(ICharacterResolver characterTask, ILocationResolver locationResolver, IEpisodesResolver episodesResolver, IAvailableApisClient availableApisClient)
         {
             _characterResolver = characterTask;
             _locationResolver = locationResolver;

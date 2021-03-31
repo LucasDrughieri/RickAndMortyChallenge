@@ -1,19 +1,19 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-using Web.Clients;
+using Web.Interfaces;
 
 namespace Web.Resolvers
 {
     /// <summary>
     /// Class to resolve how many the letter c (case insensitive) appears in all characters´s name
     /// </summary>
-    public class CharacterResolver
+    public class CharacterResolver : ICharacterResolver
     {
         const string letter = "c";
 
-        private CharacterClient characterClient;
+        private ICharacterClient characterClient;
 
-        public CharacterResolver(CharacterClient _characterClient)
+        public CharacterResolver(ICharacterClient _characterClient)
         {
             characterClient = _characterClient;
         }

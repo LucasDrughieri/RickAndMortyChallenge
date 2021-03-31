@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Web.Dtos;
+using Web.Interfaces;
 using Web.Services;
 using Web.Utils;
 
@@ -12,9 +13,9 @@ namespace Web.Controllers
     public class CharCounterController : ControllerBase
     {
         private readonly ILogger<CharCounterController> _logger;
-        private readonly CharCounterService _charCounterService;
+        private readonly ICharCounterService _charCounterService;
 
-        public CharCounterController(ILogger<CharCounterController> logger, CharCounterService charCounterService)
+        public CharCounterController(ILogger<CharCounterController> logger, ICharCounterService charCounterService)
         {
             _logger = logger;
             _charCounterService = charCounterService;

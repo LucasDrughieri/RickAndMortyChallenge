@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Net.Http;
 using Web.Clients;
+using Web.Interfaces;
 using Web.Middleware;
 using Web.Resolvers;
 using Web.Services;
@@ -24,17 +26,19 @@ namespace Web
             services.AddControllers();
 
             //Configuración de DI
-            services.AddScoped<CharacterResolver>();
-            services.AddScoped<LocationResolver>();
-            services.AddScoped<EpisodesResolver>();
+            services.AddSingleton<HttpClient>();
 
-            services.AddScoped<CharCounterService>();
-            services.AddScoped<EpisodeLocationsService>();
+            services.AddTransient<ICharacterResolver, CharacterResolver>();
+            services.AddTransient<ILocationResolver, LocationResolver>();
+            services.AddTransient<IEpisodesResolver, EpisodesResolver>();
 
-            services.AddHttpClient<CharacterClient>();
-            services.AddHttpClient<LocationClient>();
-            services.AddHttpClient<EpisodeClient>();
-            services.AddHttpClient<AvailableApisClient>();
+            services.AddTransient<ICharCounterService, CharCounterService>();
+            services.AddTransient<IEpisodeLocationsService, EpisodeLocationsService>();
+
+            services.AddTransient<ICharacterClient, CharacterClient>();
+            services.AddTransient<ILocationClient, LocationClient>();
+            services.AddTransient<IEpisodeClient, EpisodeClient>();
+            services.AddTransient<IAvailableApisClient, AvailableApisClient>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

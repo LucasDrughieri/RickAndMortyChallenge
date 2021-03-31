@@ -3,11 +3,12 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Web.Interfaces;
 using Web.Utils;
 
 namespace Web.Clients
 {
-    public class BaseClient
+    public class BaseClient : IBaseClient
     {
         protected object _lock;
         protected readonly HttpClient _client;
@@ -27,7 +28,7 @@ namespace Web.Clients
         /// </summary>
         /// <typeparam name="T">class to map the response</typeparam>
         /// <param name="url">url to call</param>
-        protected async Task<T> CallGetApiAsync<T>(string url) where T : class
+        public async Task<T> CallGetApiAsync<T>(string url) where T : class
         {
             using (HttpRequestMessage httpRequestMessage = new HttpRequestMessage())
             {

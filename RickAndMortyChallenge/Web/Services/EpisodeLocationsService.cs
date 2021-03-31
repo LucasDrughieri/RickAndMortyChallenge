@@ -4,18 +4,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using Web.Clients;
 using Web.Dtos;
+using Web.Interfaces;
 using Web.Utils;
 
 namespace Web.Services
 {
-    public class EpisodeLocationsService
+    public class EpisodeLocationsService : IEpisodeLocationsService
     {
-        private readonly CharacterClient _characterClient;
-        private readonly EpisodeClient _episodesClient;
-        private readonly AvailableApisClient _availableApisClient;
+        private readonly ICharacterClient _characterClient;
+        private readonly IEpisodeClient _episodesClient;
+        private readonly IAvailableApisClient _availableApisClient;
         private readonly ILogger<EpisodeLocationsService> _logger;
 
-        public EpisodeLocationsService(CharacterClient characterClient, EpisodeClient episodesClient, AvailableApisClient availableApisClient, ILogger<EpisodeLocationsService> logger)
+        public EpisodeLocationsService(ICharacterClient characterClient, IEpisodeClient episodesClient, IAvailableApisClient availableApisClient, ILogger<EpisodeLocationsService> logger)
         {
             _characterClient = characterClient;
             _episodesClient = episodesClient;

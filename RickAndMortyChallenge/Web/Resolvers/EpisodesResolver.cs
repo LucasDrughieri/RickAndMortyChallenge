@@ -1,19 +1,20 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using Web.Clients;
+using Web.Interfaces;
 
 namespace Web.Resolvers
 {
     /// <summary>
     /// Class to resolve how many the letter e (case insensitive) appears in all episodes´s name
     /// </summary>
-    public class EpisodesResolver
+    public class EpisodesResolver : IEpisodesResolver
     {
         const string letter = "e";
 
-        private EpisodeClient episodeClient;
+        private IEpisodeClient episodeClient;
 
-        public EpisodesResolver(EpisodeClient _episodeClient)
+        public EpisodesResolver(IEpisodeClient _episodeClient)
         {
             episodeClient = _episodeClient;
         }

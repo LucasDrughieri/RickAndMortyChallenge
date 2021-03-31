@@ -2,13 +2,14 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Web.Dtos;
+using Web.Interfaces;
 
 namespace Web.Clients
 {
     /// <summary>
     /// Client to getting all episodes
     /// </summary>
-    public class EpisodeClient : BaseClient
+    public class EpisodeClient : BaseClient, IEpisodeClient
     {
         public EpisodeClient(HttpClient client) : base(client)
         {

@@ -1,13 +1,14 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
 using Web.Dtos;
+using Web.Interfaces;
 
 namespace Web.Clients
 {
     /// <summary>
     /// Client to getting all available APIs resources
     /// </summary>
-    public class AvailableApisClient : BaseClient
+    public class AvailableApisClient : BaseClient, IAvailableApisClient
     {
         const string AvailableApisUrl = "https://rickandmortyapi.com/api";
 

@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Web.Dtos;
+using Web.Interfaces;
 using Web.Services;
 using Web.Utils;
 
@@ -10,9 +11,9 @@ namespace Web.Controllers
     [Route("[controller]")]
     public class EpisodeLocationController : ControllerBase
     {
-        private readonly EpisodeLocationsService _episodeLocationsService;
+        private readonly IEpisodeLocationsService _episodeLocationsService;
 
-        public EpisodeLocationController(EpisodeLocationsService episodeLocationsService)
+        public EpisodeLocationController(IEpisodeLocationsService episodeLocationsService)
         {
             _episodeLocationsService = episodeLocationsService;
         }
