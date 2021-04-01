@@ -22,7 +22,7 @@ jobs:
         dotnet-version: '3.1.301'
 
     - name: Go to RickAndMortyChallege folder
-    - run: cd /RickAndMortyChallege
+      run: cd /RickAndMortyChallege
 
     - name: Build with dotnet
       run: dotnet build --configuration Release
