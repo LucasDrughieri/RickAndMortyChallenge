@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
 using Web.Dtos;
 using Web.Interfaces;
@@ -11,7 +10,7 @@ namespace Web.Clients
     /// </summary>
     public class LocationClient : BaseClient, ILocationClient
     {
-        public LocationClient(HttpClient client) : base(client)
+        public LocationClient(IHttpHandler client) : base(client)
         {
         }
 

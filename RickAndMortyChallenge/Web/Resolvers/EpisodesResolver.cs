@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-using Web.Clients;
 using Web.Interfaces;
 
 namespace Web.Resolvers

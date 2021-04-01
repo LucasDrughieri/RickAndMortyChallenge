@@ -1,5 +1,4 @@
-﻿using System.Net.Http;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Web.Dtos;
 using Web.Interfaces;
 
@@ -12,7 +11,7 @@ namespace Web.Clients
     {
         const string AvailableApisUrl = "https://rickandmortyapi.com/api";
 
-        public AvailableApisClient(HttpClient client) : base(client)
+        public AvailableApisClient(IHttpHandler client) : base(client)
         {
         }
 

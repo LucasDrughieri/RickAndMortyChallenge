@@ -39,6 +39,8 @@ namespace Web
             services.AddTransient<ILocationClient, LocationClient>();
             services.AddTransient<IEpisodeClient, EpisodeClient>();
             services.AddTransient<IAvailableApisClient, AvailableApisClient>();
+
+            services.AddScoped<IHttpHandler, Utils.HttpClientHandler>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

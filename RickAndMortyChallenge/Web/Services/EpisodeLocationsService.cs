@@ -14,14 +14,12 @@ namespace Web.Services
         private readonly ICharacterClient _characterClient;
         private readonly IEpisodeClient _episodesClient;
         private readonly IAvailableApisClient _availableApisClient;
-        private readonly ILogger<EpisodeLocationsService> _logger;
 
-        public EpisodeLocationsService(ICharacterClient characterClient, IEpisodeClient episodesClient, IAvailableApisClient availableApisClient, ILogger<EpisodeLocationsService> logger)
+        public EpisodeLocationsService(ICharacterClient characterClient, IEpisodeClient episodesClient, IAvailableApisClient availableApisClient)
         {
             _characterClient = characterClient;
             _episodesClient = episodesClient;
             _availableApisClient = availableApisClient;
-            _logger = logger;
         }
 
         public async Task<EpisodeLocationsResponse> RunAsync()

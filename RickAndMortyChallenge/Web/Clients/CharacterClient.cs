@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
 using Web.Dtos;
 using Web.Interfaces;
@@ -11,7 +10,7 @@ namespace Web.Clients
     /// </summary>
     public class CharacterClient : BaseClient, ICharacterClient
     {
-        public CharacterClient(HttpClient client) : base(client)
+        public CharacterClient(IHttpHandler client) : base(client)
         {
         }
 

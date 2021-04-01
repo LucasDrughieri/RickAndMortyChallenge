@@ -11,7 +11,7 @@ namespace Web.Clients
     /// </summary>
     public class EpisodeClient : BaseClient, IEpisodeClient
     {
-        public EpisodeClient(HttpClient client) : base(client)
+        public EpisodeClient(IHttpHandler client) : base(client)
         {
         }
 

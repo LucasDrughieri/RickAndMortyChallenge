@@ -24,9 +24,12 @@ namespace Tests.Resolvers
                 new CharacterResultResponse { Id = 3, Name = "Summer Smith", Location = new LocationItemResponse { Name = "Earth (Replacement Dimension)", Url = "https://rickandmortyapi.com/api/location/4" }, Origin = new LocationItemResponse { Name = "Earth (C-137)", Url = "https://rickandmortyapi.com/api/location/7" } },
                 new CharacterResultResponse { Id = 4, Name = "Beth Smith", Location = new LocationItemResponse { Name = "Earth (Replacement Dimension)", Url = "https://rickandmortyapi.com/api/location/24" }, Origin = new LocationItemResponse { Name = "Earth (C-137)", Url = "https://rickandmortyapi.com/api/location/11" } },
                 new CharacterResultResponse { Id = 5, Name = "Abadango Cluster Princess", Location = new LocationItemResponse { Name = "Earth (Replacement Dimension)", Url = "https://rickandmortyapi.com/api/location/8" }, Origin = new LocationItemResponse { Name = "Earth (C-137)", Url = "https://rickandmortyapi.com/api/location/12" } },
+                new CharacterResultResponse { Id = 6, Name = "", Location = new LocationItemResponse { Name = "Earth (Replacement Dimension)", Url = "https://rickandmortyapi.com/api/location/8" }, Origin = new LocationItemResponse { Name = "Earth (C-137)", Url = "https://rickandmortyapi.com/api/location/12" } },
+                new CharacterResultResponse { Id = 7, Name = null, Location = new LocationItemResponse { Name = "Earth (Replacement Dimension)", Url = "https://rickandmortyapi.com/api/location/8" }, Origin = new LocationItemResponse { Name = "Earth (C-137)", Url = "https://rickandmortyapi.com/api/location/12" } },
             };
 
-            characterClient.Setup(x => x.GetCharactersAsync(It.IsAny<string>())).ReturnsAsync(characterList);
+            characterClient.Setup(x => x.GetCharactersAsync("url")).ReturnsAsync(characterList);
+            characterClient.Setup(x => x.GetCharactersAsync("")).ReturnsAsync(new List<CharacterResultResponse>());
      
             characterResolver = new CharacterResolver(characterClient.Object);
         }
@@ -37,6 +40,14 @@ namespace Tests.Resolvers
             var characterMessage = await characterResolver.Execute("url");
 
             Assert.AreEqual(characterMessage, "La letra c aparece 4 veces en los nombres de todos los personajes");
+        }
+
+        [Test]
+        public async Task CharactersAreEmpty()
+        {
+            var characterMessage = await characterResolver.Execute("");
+
+            Assert.AreEqual(characterMessage, "The characters API returns an empty list");
         }
     }
 }
