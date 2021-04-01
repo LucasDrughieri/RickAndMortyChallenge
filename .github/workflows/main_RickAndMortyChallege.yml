@@ -27,7 +27,7 @@ jobs:
     - name: Run tests
       run: dotnet test Tests
 
-    - name: Build with dotnet
+    - name: Build 
       run: dotnet build --configuration Release
 
     - name: dotnet publish

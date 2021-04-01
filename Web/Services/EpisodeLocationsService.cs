@@ -1,8 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Web.Clients;
 using Web.Dtos;
 using Web.Interfaces;
 using Web.Utils;
@@ -71,26 +69,36 @@ namespace Web.Services
                     if (character == null) continue;
 
                     //If character location exists and if it is not in item.Locations, it will be added to the list
-                    var locationId = character.Location.GetId(availableApis.Locations);
-
-                    if (locationId != null && item.Locations.All(l => l.Id != locationId))
-                    {
-                        item.Locations.Add(new LocationItem { Id = locationId.Value, Name = character.Location.Name });
-                    }
+                    SetLocation(availableApis, item, character);
 
                     //If character origin exists and if it is not in item.Origins, it will be added to the list
-                    var originId = character.Origin.GetId(availableApis.Locations);
-
-                    if (originId != null && item.Origins.All(l => l.Id != originId))
-                    {
-                        item.Origins.Add(new LocationItem { Id = originId.Value, Name = character.Location.Name });
-                    }
+                    SetOrigin(availableApis, item, character);
                 }
 
                 response.Episodes.Add(item);
             }
 
             return response;
+        }
+
+        private void SetOrigin(AvailabeApisResponse availableApis, EpisodeLocationItem item, CharacterResultResponse character)
+        {
+            var originId = character.Origin.GetId(availableApis.Locations);
+
+            if (originId != null && item.Origins.All(l => l.Id != originId))
+            {
+                item.Origins.Add(new LocationItem { Id = originId.Value, Name = character.Location.Name });
+            }
+        }
+
+        private void SetLocation(AvailabeApisResponse availableApis, EpisodeLocationItem item, CharacterResultResponse character)
+        {
+            var locationId = character.Location.GetId(availableApis.Locations);
+
+            if (locationId != null && item.Locations.All(l => l.Id != locationId))
+            {
+                item.Locations.Add(new LocationItem { Id = locationId.Value, Name = character.Location.Name });
+            }
         }
     }
 }
