@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Text.RegularExpressions;
 
 namespace Web.Dtos
 {
@@ -19,12 +18,5 @@ namespace Web.Dtos
         public LocationItemResponse Origin { get; set; }
 
         public LocationItemResponse Location { get; set; }
-
-        public int GetLetterCount(string letter)
-        {
-            if (string.IsNullOrWhiteSpace(Name)) return 0;
-
-            return Regex.Matches(Name.ToLowerInvariant(), letter.ToLowerInvariant()).Count;
-        }
     }
 }

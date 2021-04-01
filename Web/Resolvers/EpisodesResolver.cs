@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using Web.Interfaces;
+using Web.Utils;
 
 namespace Web.Resolvers
 {
@@ -25,7 +26,7 @@ namespace Web.Resolvers
 
             if (!episodes.Any()) return "The episodes API returns an empty list";
 
-            return $"La letra {letter} aparece {episodes.Sum(_ => _.GetLetterCount(letter))} veces en los nombres de todos los episodios";
+            return $"La letra {letter} aparece {episodes.Sum(_ => Helper.GetLetterCount(letter, _.Name))} veces en los nombres de todos los episodios";
         }
     }
 }

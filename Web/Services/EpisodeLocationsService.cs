@@ -58,7 +58,7 @@ namespace Web.Services
                 item.Episode = episode.Episode;
                 item.TotalCharacters = episode.Characters.Count;
 
-                //Loop over all characters in a episode
+                //Loop over all characters in an episode
                 foreach (var characterUrl in episode.Characters)
                 {
                     //Get character id by characterUrl

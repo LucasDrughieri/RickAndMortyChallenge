@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using Web.Interfaces;
+using Web.Utils;
 
 namespace Web.Resolvers
 {
@@ -25,7 +26,7 @@ namespace Web.Resolvers
 
             if (!locations.Any()) return "The locations API returns an empty list";
 
-            return $"La letra {letter} aparece {locations.Sum(_ => _.GetLetterCount(letter))} veces en los nombres de todas las ubicaciones";
+            return $"La letra {letter} aparece {locations.Sum(_ => Helper.GetLetterCount(letter, _.Name))} veces en los nombres de todas las ubicaciones";
         }
     }
 }
